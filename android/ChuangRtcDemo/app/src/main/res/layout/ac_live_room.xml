@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.LiveRoomActivity">
+
+    <include
+        android:id="@+id/room_title"
+        layout="@layout/room_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/liveContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/room_title">
+
+        <FrameLayout
+            android:id="@+id/localViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.aocyun.chuangrtcdemo.views.PlayStreamView
+                android:id="@+id/localView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/horizon_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_above="@id/roomToolbarBar"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:id="@+id/llUserContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+        </HorizontalScrollView>
+
+        <include
+            android:id="@+id/roomToolbarBar"
+            layout="@layout/room_toolbar_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp" />
+
+        <FrameLayout
+            android:id="@+id/fl_logcat"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginTop="28dp"
+            android:background="@color/black_half_transparent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/logcat_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="7sp" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_perch2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/no_public_bg"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/perch_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/no_public_ic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/perch_img"
+                android:layout_centerHorizontal="true"
+                android:text="会议马上开始，请稍等～"
+                android:textColor="@color/rtc_demo_text_grey"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

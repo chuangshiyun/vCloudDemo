@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="red">#FF0000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#8E959D</color>
+    <color name="black_half_transparent">#66000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="settings_value_color">#8E8E8E</color>
+    <color name="view_line">#F2F2F2</color>
+    <color name="hui">#999999</color>
+    <color name="no_public_bg">#fff9f9f9</color>
+    <color name="rtc_demo_light_grey">#888a8a</color>
+    <color name="rtc_demo_text_grey">#989898</color>
+    <color name="rtc_demo_black">#1b1b1b</color>
+    <color name="rtc_demo_theme_color">#f9fbfa</color>
+    <color name="rtc_demo_red">#eb2323</color>
+    <color name="rtc_demo_dark_grey">#5c5c5c</color>
+    <color name="rtc_demo_blue">#0061ff</color>
+
+</resources>

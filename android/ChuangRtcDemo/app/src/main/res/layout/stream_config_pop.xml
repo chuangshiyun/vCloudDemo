@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/prew_view_shape"
+    android:orientation="vertical">
+
+    <!--        流id-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/stream_id_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="streamId："
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/stream_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/stream_id_title"
+            android:text=""
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+
+    <!--        码率-->
+    <RelativeLayout
+        android:id="@+id/bitrateContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/bitrate_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bitrate："
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/small_bitrate_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bitrate_title"
+            android:text=""
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+    <!--        videofps-->
+    <RelativeLayout
+        android:id="@+id/video_fps_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/video_fps_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="videofps："
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/video_small_fps_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/video_fps_title"
+            android:text=""
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+    <!--        audiofps-->
+    <RelativeLayout
+        android:id="@+id/audio_fps_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/audio_fps_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="audiofps："
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/audio_small_fps_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/audio_fps_title"
+            android:text=""
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+    <!--        丢包率-->
+    <RelativeLayout
+        android:id="@+id/lostContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/networklost_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lost："
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/small_networklost_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/networklost_title"
+            android:text=""
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+
+    <!--        延迟-->
+    <RelativeLayout
+        android:id="@+id/delayContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/delay_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="delay："
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/small_delay_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/delay_title"
+            android:text=""
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+
+    <!-- 音量监测-->
+    <RelativeLayout
+        android:id="@+id/volumeContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/volumeTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="volume："
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/volumeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/volumeTitleTextView"
+            android:text=""
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+
+    <!-- 网络监测-->
+    <RelativeLayout
+        android:id="@+id/networkSpeedContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/networkSpeedTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="network："
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/networkSpeedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/networkSpeedTitleTextView"
+            android:text=""
+            android:textColor="@color/rtc_demo_red"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
