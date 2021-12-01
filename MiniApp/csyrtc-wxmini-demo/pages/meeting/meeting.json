@@ -1,0 +1,10 @@
+{"usingComponents": {
+  "csy-pusher": "../../components/csy-pusher/csy-pusher",
+  "csy-player": "../../components/csy-player/csy-player"
+},
+  
+      "navigationStyle":"default",
+      "navigationBarTextStyle": "white",
+      "navigationBarTextStyle":"black"
+
+}

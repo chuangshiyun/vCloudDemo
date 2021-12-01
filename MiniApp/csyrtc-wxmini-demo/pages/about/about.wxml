@@ -1,0 +1,12 @@
+<!--pages/about/about.wxml-->
+<view class="content">
+    <view class="about">
+        <text>SDK版本号：
+         {{sdkVersion}}</text>
+    </view>
+    <view></view>
+    <view class="about">
+        <text>APP版本号：
+         {{appVersion}}</text>
+    </view>
+</view>

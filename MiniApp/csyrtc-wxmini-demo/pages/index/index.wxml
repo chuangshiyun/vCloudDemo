@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class=" csy-bg">
+  <loading hidden="{{loadingHidden}}">
+    玩命加载中...
+  </loading>
+
+  <view class="content flex-center-column">
+    <view class="set-section" bindtap="setCon" style="top:{{top}}px">
+      <image class="setting" src="../../images/setting.png" alt=""></image>
+    </view>
+    <view class="logo-section flex-center-column">
+      <image class="logo" mode="aspectFit" src="../../images/logo.png"></image>
+      <text class="logo-text">云视通</text>
+    </view>
+    <view class="userinfo">
+      <block wx:if="{{canIUseOpenData}}">
+        <view class="userinfo-avatar" bindtap="bindViewTap">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <open-data type="userNickName"></open-data>
+      </block>
+      <block wx:elif="{{!hasUserInfo}}">
+        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+        <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+      </block>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+
+    <view class="form-section flex-center-column">
+
+      <view class="inputWrapper">
+        <!-- 三种触发方法 -->
+        <input placeholder-style='color:#c7c7c7' class="channelInput" placeholder='请输入房间号' value='{{inputChannelValue}}' bindinput="onInputChannel"
+          bindconfirm="onInputChannel" bindblur="onInputChannel"></input>
+      </view>
+      <view class="inputWrapper">
+        <!-- 三种触发方法 -->
+        <input placeholder-style='color:#c7c7c7' class="channelInput" value='{{inputStreamlValue}}' placeholder='请输入用户名' bindinput="onInputStream"
+          bindconfirm="onInputStream" bindblur="onInputStream"></input>
+      </view>
+
+      <!-- 微信开发能力 -->
+      <button plain="true" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" disabled="{{disableJoin}}"
+        class="joinBtn">进入直播</button>
+    </view>
+    <view class="footer flex-center-column">
+
+      <text>Powered by chuangcache.com </text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view id="main" class="content csy-bg flex-center-column">
+
+  <view class="logon-content" hidden="{{loadingHidden}}">
+    <image class="img" src="../../images/loginn.png"></image>
+    <view>
+      <text class="logon-text">会议马上开始，请稍等～</text>
+    </view>
+  </view>
+  <view id="video-container" class="video-container n{{totalUser}}">
+
+    <block wx:for="{{media}}" wx:key="key">
+
+      <csy-pusher wx:if="{{item.type === 0 && !item.holding}}" id="rtc-pusher-{{item.uid}}" uid="{{item.uid}}"
+        x="{{item.left}}" y="{{item.top}}" width="{{item.width}}" height="{{item.height}}" url="{{item.url}}"
+        muted="{{enablemic}}" beauty="{{beauty}}" debug="{{debug}}" enablecamera="{{enablecamera}}" bindpushfailed="onPusherFailed">
+      </csy-pusher>
+      <csy-player wx:if="{{item.type === 1 && !item.holding}}" id="rtc-player-{{item.uid}}" uid="{{item.uid}}"
+        x="{{item.left}}" y="{{item.top}}" width="{{item.width}}" height="{{item.height}}" debug="{{debug}}"
+        url="{{item.url}}" bindpullfailed="onPlayerFailed">
+      </csy-player>
+    </block>
+    <cover-view class="footer {{hide ?'hide':''}} flex-center-column">
+      <cover-view class="toolbar">
+        <button plain="true" class="makeup {{beauty === 5 ?'':'off'}} {{!!onlyAudio ? 'onlyaudio': ''}} btn"
+          bindtap='onMakeup'>
+          <cover-image class="image" src="{{makeupUrl}}"></cover-image>
+        </button>
+
+        <button plain="true" hover-class="hover"
+          class="camera {{front?'':'nofront'}} {{!!onlyAudio ? 'onlyaudio': ''}} btn" bindtap='onSwitchCamera'>
+          <cover-image class="image" src="{{cameraUrl}}"></cover-image>
+        </button>
+        <button plain="true" hover-class="hover" class="log {{yes?'': 'no'}} {{ispublish?'':'unpublish'}} btn"
+          bindtap='onSubmitLog'>
+          <cover-image class="image" src="{{logUrl}}"></cover-image>
+        </button>
+        <button plain="true" class="mic {{enablemic?'unablemic': ''}} btn" bindtap='onMute'>
+          <cover-image class="image" src="{{micUrl}}"></cover-image>
+        </button>
+        <button plain="true" class="cam {{!!onlyAudio ? 'onlyaudio': ''}} {{enablecam?'':'unablecam' }} btn" bindtap=''>
+          <cover-image class="image" src="{{camUrl}}"></cover-image>
+        </button>
+        
+      </cover-view>
+    </cover-view>
+  </view>
+</view>

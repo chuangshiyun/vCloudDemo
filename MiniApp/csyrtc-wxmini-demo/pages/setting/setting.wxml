@@ -1,0 +1,19 @@
+<!--pages/setting.wxml-->
+<view class="content csy-bg">
+
+    <view class="set-list">
+        <view class="set-content">
+            <view >是否开启纯音频模式</view>
+            <view>
+                <switch class="checked" color="#006EFE" checked="{{switchChecked}}" bindchange="switchChange" />
+            </view>
+
+        </view>
+    </view>
+
+    <view class="set-list">
+        <view class="set-content" bindtap="ShowAbout">
+            <view class="about">关于</view>
+        </view>
+    </view>
+</view>

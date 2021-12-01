@@ -1,0 +1,15 @@
+<!--components/csy-player/csy-player.wxml-->
+<view class="play-container" style="left:{{x}}px; top:{{y}}px; width: {{width}}px; height: {{height}}px; ">
+  <!-- 画面方向  状态变化 填充模式 调试模式-->
+  <live-player wx:if="{{url!==''}}" id="player-{{uid}}" src="{{url}}" mode="RTC" muted="{{muteAudio}}" min-cache="0.3" max-cache="0.8" autoplay="true" object-fit="contain" class="player" orientation="{{orientation}}" 
+  bindnetstatus="recorderNetChange" bindstatechange="playerStateChange" bindaudiovolumenotify = 'audioVolumeChange' style="height:{{height}}px; position: absolute; width: 100%; top: 0; left: 0;"
+    debug="{{debug}}" >
+    <!-- 纯音频模式的流显示指定背景图 -->
+    <cover-view wx-if="{{onlyaudio}}" class="flex-center-column" style="height:{{height}}px">
+      <cover-image src="../../images/onlyaudio.jpg"></cover-image>
+    </cover-view>
+    <cover-view class="streamId">
+      {{uid}}
+    </cover-view>
+  </live-player>
+</view>

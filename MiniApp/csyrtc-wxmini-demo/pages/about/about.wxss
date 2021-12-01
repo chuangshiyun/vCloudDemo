@@ -1,0 +1,6 @@
+/* pages/about/about.wxss */
+ .content .about{
+    margin: 10rpx 32rpx;
+    color: #c7c7c7;
+    font-size: 28rpx;
+ }

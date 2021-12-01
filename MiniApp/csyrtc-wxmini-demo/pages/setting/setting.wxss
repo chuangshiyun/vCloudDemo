@@ -1,0 +1,31 @@
+/* pages/setting.wxss */
+@import "../../common.wxss";
+
+page {
+    height: 100%;
+  }
+.content{
+    background-color: #F8F9FA;
+}
+.content .set-list{
+    width: 100%;
+    background-color: #ffffff;
+    margin-top: 15rpx;
+    font-size: 28rpx;
+}
+.content .set-content{
+    width: 684rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-left: 40rpx;
+}
+.content .set-content{
+    display: flex;
+  justify-content:space-between;
+}
+.content .set-content .checked{
+    transform: scale(.8);
+}
+.content .set-content .about{
+font-size: 26rpx;
+}

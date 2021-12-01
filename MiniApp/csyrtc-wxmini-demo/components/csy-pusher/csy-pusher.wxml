@@ -1,0 +1,9 @@
+<!--components/csy-pusher.wxml-->
+<view class="pusher-container"  style="top: {{y}}px; left: {{x}}px; width: {{width}}px; height: {{height}}px; position: absolute;">
+  <view wx-if="{{onlyaudio}}" class=" flex-center-column">
+    <image class="onlyImage" src="../../images/onlyaudio.jpg" ></image>
+  </view>
+  <live-pusher wx:if="{{url!==''}}"  mode="aspectFit" id="pusher-{{uid}}"style="height:{{height}}px; position: absolute; width: 100%;" url="{{url}}" mode="RTC" mute-video="true" aspect="{{aspect}}" enable-camera="{{enablecamera}}" class="camera {{onlyaudio? 'onlyAudio':''}}" enable-ans="true" enable-agc= "true" audio-volume-type="voicecall" bindstatechange="recorderStateChange" bindnetstatus="recorderNetChange" binderror = "recorderError" background-mute="true" muted="{{muted}}"  beauty="{{beauty}}"
+    max-bitrate="{{maxBitrate}}" min-bitrate="{{minBitrate}}" audio-quality = "{{audioquality}}" waiting-image="https://webdemo.csy.io/away.png" debug="{{debug}}" autopush="true" />
+  <cover-view class="streamId"> {{uid}}</cover-view>
+</view>
