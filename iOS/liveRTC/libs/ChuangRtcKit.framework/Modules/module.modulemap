@@ -1,0 +1,6 @@
+framework module ChuangRtcKit {
+  umbrella header "ChuangRtcKit.h"
+
+  export *
+  module * { export * }
+}
