@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vCloud-云视通</title>
+    <link href="demo/imgs/title.ico" rel="SHORTCUT ICON" />
+    <link href="./src/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="./src/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./src/bootstrap-3.3.7/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="./src/index.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class=" container setting-panel hide">
+
+        <div class="head">
+            <div class="setting-text">
+                <p>设置</p>
+            </div>
+            <div class="close"><img src="demo/imgs/close@2x.png" alt=""></div>
+        </div>
+
+        <div class="setting-container">
+            <div class="setting-mesage">
+                <div class="vido-setting">
+                    <div class="video-test">视频设置</div>
+
+                    <div class="video-set">
+                        <div class="video-data">
+                            <p>显示视频统计数据</p>
+                        </div>
+                        <div class="video-data data-show none">
+                            <button class="data-btn"><span class="data-btn-span"></span></button>
+                        </div>
+                    </div>
+
+                    <div class="video-preset">
+                        <div class="video-data">
+                            <p>分辨率</p>
+                        </div>
+                        <div class="video-data">
+                            <select name="" class="media-setting">
+                                <!-- <option value="1920*1080_30_512" selected>1920*1080</option> -->
+                                <!-- <option value="1920*1080_30_2500">1920*1080</option>
+                                <option value="1920*1080_30_2000">1920*1080</option> -->
+                                <option value="1280*720_30_1500" selected>1280*720</option>
+                                <option value="960*540_15_1200">960*540</option>
+                                <option value="640*480_15_600">640*480</option>
+                                <option value="480*320_15_300">480*320</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="video-set clear">
+                        <div class="video-data">
+                            <p>纯音频模式</p>
+                        </div>
+                        <div class="video-data voice-data-show none">
+                            <button class="data-btn"><span class="data-btn-span"></span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rtmp-setting">
+                    <div class="video-test">RTMP推流</div>
+                    <div class="rtmp-set">
+                        <div class="rtmp-data">
+                            <p>是否开启RTMP推流服务</p>
+                        </div>
+
+                        <div class="rtmp-data rtmp-serve none">
+                            <button class="data-btn"><span class="data-btn-span"></span></button>
+                        </div>
+                    </div>
+                    <div class="rtmp-preset hide">
+                        <div class="rtmp-data">
+                            <p>RTMP推流地址</p>
+                        </div>
+                        <div class="rtmp-data">
+                            <input class="push-rtmp" type="text" placeholder="请设置RTMP推流地址" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="mix-setting">
+                    <div class="video-test">混流</div>
+                    <div class="mix-set">
+                        <div class="mix-data">
+                            <p>是否开启混推流服务</p>
+                        </div>
+
+                        <div class="mix-data mix-serve none">
+                            <button class="data-btn"><span class="data-btn-span"></span></button>
+                        </div>
+                    </div>
+                    <div class="mix-preset hide">
+                        <div class="mix-data">
+                            <p>RTMP混流地址</p>
+                        </div>
+                        <div class="mix-data">
+                            <input class="mixrtmp" name="" type="text" value="" placeholder="请设置RTMP混流地址">
+                        </div>
+                    </div>
+                    <div class="mix-preset hide ">
+                        <div class="mix-data">
+                            <p>混流比特率</p>
+                        </div>
+                        <div class="mix-data">
+                            <select name="" class="mix-birate-setting">
+                                <option value="2048" selected> 2M</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mix-preset hide">
+                        <div class="mix-data">
+                            <p>混流分辨率</p>
+                        </div>
+                        <div class="mix-data">
+                            <select name="" class="mix-res-setting">
+                                <option value="3" selected> 1280*720</option>
+                                <option value="0"> 800*600</option>
+                                <option value="1"> 768*432</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="rtmp-err">
+                    <div class="err hide">rtmp推流地址不能为空</div>
+                </div>
+                <div class="mixrtmp-err">
+                    <div class="err hide">rtmp混流地址不能为空</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container login-room">
+        <div class="logo">
+            <!-- <div class="head-img">
+                    <img src="demo/imgs/login-logo.png" alt="">
+                </div> -->
+            <div class="login-info">
+                <div class="setting"><img src="./demo/imgs/set.png" alt=""></div>
+
+                <div class="log-title">
+                    <div>欢迎使用</div>
+                    <div>vCloud-云视通</div>
+                </div>
+
+                <div class="login-user"><input class="room-id" type="text" name="" title="" value=""
+                        placeholder="请输入房间号" maxlength="255"></div>
+                <div class="login-user"><input class="stream-name" type="text" name="" value="" placeholder="请输入用户名"
+                        maxlength="255"></span></div>
+                <div class="login-roles">
+                    <div class="roles">
+                        <div class=" role">
+                            <div class="role-info" tabindex="0">
+                                <div class="ico checked">
+                                    <span class="ico-inner checked-inner"></span>
+                                </div>
+                                <div class="role-text" data-bind="1">主播</div>
+                            </div>
+                        </div>
+                        <div class="role">
+                            <div class="role-info" tabindex="0">
+                                <div class="ico">
+                                    <span class="ico-inner"></span>
+                                </div>
+                                <div class="role-text" data-bind="2">观众</div>
+                            </div>
+                        </div>
+                        <div class="role">
+                            <div class="role-info" tabindex="0">
+                                <div class="ico">
+                                    <span class="ico-inner"></span>
+                                </div>
+                                <div class="role-text" data-bind="3">互动连麦</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="login"><button>进入房间</button></div>
+
+                <div class="login-err err hide">注意：房间号和用户名只能含有数字、字母、下划线和-</div>
+            </div>
+
+            <div class="copy-right">Copyright © www.chuangcache.com, All Rights Reserved.</div>
+
+        </div>
+    </div>
+
+    <div class="container video-panel hide">
+
+        <div class="head videohead">
+            <div class="head-img head-img-video">
+                <img src="demo/imgs/cloud.png" alt="">
+                <span>云 视 通</span>
+            </div>
+
+            <div class="user-info">
+                <div class="roomId"><span>房间号：</span><input class="roomidValue" type="text" value=""
+                        onmousemove="this.title=this.value" οnfοcus="if (value =='请输入您的姓名'){value =''}"
+                        οnblur="if (value ==''){value='请输入您的姓名'}"></div>
+                <!-- <div class="userName"><span>用户名： </span><input class="usernameValue" type="text" value=""></div> -->
+                <div class="userrole"><span>角色： </span><input class="userroleValue" type="text" value=""></div>
+            </div>
+
+            <div class="setting"><img src="./demo/imgs/set.png" alt=""></div>
+        </div>
+
+        <div class="video-container">
+
+            <span class="wait-video">等待主播加入...</span>
+
+            <div class="participant">
+                <div class="participant-info"><span>主播流（</span><var></var>）</span></div>
+                <div class="participants">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <!--html 模板，不显示-->
+            <script id="mix_stream_tpl" type="text/template">
+                <li class=" pars">
+                    <div class="stream-item" data-id="__k__">
+                        <div class="stream-video" id="video-__k__"></div>
+                        <div class="stream-info">
+                            <pre></pre>
+                        </div>
+                        <div class="stream-mask">
+                            <div class="camera video"><button></button>
+                            </div>
+                            <div class="microphone audio" class=""><button></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userid">
+                        <!-- <pre></pre> -->
+                        <input type="text" title="" value="" onmousemove="this.title=this.value">
+                    </div>
+                </li>
+            </script>
+
+            <li class="firstvideo hide">
+                <div class="stream-item" data-id="__k__">
+                    <div class="stream-video" id="video-__k__">
+                        <p>已在主屏显示</p>
+                    </div>
+                </div>
+                <div class="userid">
+                    <input type="text" value="" onmousemove="this.title=this.value">
+                </div>
+            </li>
+
+        </div>
+
+        <div class=" footer">
+            <!-- <div class="times">会议时长： <span><input type="text"></span></div> -->
+            <div class="operate-items">
+                <div class="camera video"><button></button>
+                    <p>摄像头</p>
+                </div>
+                <div class="microphone audio" class=""><button></button>
+                    <p>麦克风</p>
+                </div>
+                <div class="screen"><button></button>
+                    <p>屏幕共享</p>
+                </div>
+                <!-- <div class="screen"><button><img src="" alt=""></button><p>信息</p></div> -->
+                <div class="on-off"><button class="logout"></button>
+                    <p>挂断</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- 加这个cover防止点开设置允许执行视频窗下面的操作，目前还存在问题-->
+    <div class="cover hide"></div>
+    <script type="text/javascript" src="./src/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="./src/jquery-ui-v1.12.1.min.js"></script>
+    <script type="text/javascript" src="./src/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./src/toastr/toastr.min.js"></script>
+    <script type="text/javascript" src="./src/videocube.js"></script>
+    <!-- <script type="text/javascript" src="./demo/index.js"></script> -->
+    <script type="text/javascript" src="./sdk/Web2.2.1.1-202110111846-2.2.1.1.js"></script>
+
+    <!-- demo-delete-line
+<script id="cclive-script" type="text/javascript" src="./sdk/Web2.2.1.1-202110111846-2.2.1.1.js"></script>
+demo-delete-line -->
+    <!-- <script id="demo-delete-line" type="text/javascript" src="./demo/index.js"></script> -->
+
+
+
+    <script>
+        function randomnum(n) {
+            var numbase = Math.pow(10, n - 1);
+            return Math.floor(Math.random() * 9 * numbase) + numbase;
+        }
+
+        var CHARS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+        function randomString(len) {
+            var chars = CHARS, radix = chars.length, rstr = [];
+            rstr[0] = chars[0 | Math.random() * (radix - 10) + 10];
+            for (var i = 1, l = len; i < l; i++) rstr[i] = chars[0 | Math.random() * radix];
+            return rstr.join('');
+        }
+
+        var sdkConfig = {
+            uid: '',
+            role: 1,    //1-主播 2-观众 3-互动
+            appid: '',   //your_app_id
+            appkey: '',   //your_app_key
+
+            inited: false,
+        };
+        function getUserId() {
+            var lochash = window.location.hash;
+            if (!lochash) {
+                lochash = randomnum(10);
+                window.location.hash = '#' + lochash;
+            } else {
+                (lochash.indexOf('#') == 0) &&
+                    (lochash = lochash.substring(1));
+            }
+            return lochash;
+        }
+        sdkConfig.uid = randomString();
+
+
+    </script>
+    <script>
+        sdkConfig.appid = '';
+        sdkConfig.appkey = '';
+
+        function generalFailure(errorCode) {
+            if (errorCode == 57003) {
+                toastr.warning("<i class='fa fa-exclamation-triangle'></i> 权限未打开，只可推屏幕共享");
+            }
+            if (errorCode == '57004' && $('ul li:eq(0) .stream-video p').text() != '您的摄像头正在被其他应用占用）') {
+                $('ul li:eq(0) .stream-video').css({ "background": "black", "display": "table", "text-align": "center" });
+                $('ul li:eq(0) .stream-video p').css({ "font-family": "苹方-简 常规体", "font-size": "2rem", "color": "#fff", "display": "table-cell", "vertical-align": "middle" }).text('您的摄像头正在被其他应用占用');
+            }
+        }
+
+        var videoCube = VideoCube('ul');
+        videoCube.setItemTpl($("script#mix_stream_tpl").html());
+
+        var $loginRoom = $('.login-room'),//登录界面
+            $roomId = $('.room-id'),
+            $streamName = $('.stream-name'),
+            $role = $(".role"),
+            $roleInfo = $(".role-info"),
+            $roletext = $(".role-text"),
+            $ico = $(".ico"),
+            $icoinner = $('.ico-inner'),
+            $login = $('.login'),// 进入房间
+
+            $videoPanel = $('.video-panel'),//视频窗口
+            $streamItem = $(".stream-item"),
+            $camera = $(".camera"),
+            $microphone = $(".microphone"),
+            $screen = $('.screen'),
+            $logout = $('.logout'),//挂断
+
+            $settingPanel = $(".setting-panel"),
+            $mediaSetting = $(".media-setting"),
+            $dataShow = $(".data-show"),
+            $voicedataShow = $(".voice-data-show"),
+            $dataBtn = $(".data-btn"),
+            $rtmpServe = $(".rtmp-serve"),
+            $rtmppreset = $('.rtmp-preset'),
+            $pushrtmp = $('.push-rtmp'),
+
+            $mixServe = $(".mix-serve"),
+            $mixrtmp = $(".mixrtmp"),
+            $mixpreset = $('.mix-preset'),
+            $mixRes = $(".mix-res-setting"),
+            $mixBirate = $(".mix-birate-setting");
+
+        var sdkInit = false;
+        var showsiItvl = 0;
+        var netstats = '';
+
+        var usertype = null,
+            userrole = null,
+            $videoValue = '',
+            $audioValue = '';
+
+        var isbtnEvent = -1;
+
+        $roleInfo.on("click", function () {
+            $(this).parent().parent().find($ico).removeClass("checked");
+            $(this).parent().parent().find($icoinner).removeClass("checked-inner");
+            $(this).parent().parent().find($roletext).css('color', '#9A9EAC');
+            $(this).find($ico).addClass("checked");
+            $(this).find($icoinner).addClass("checked-inner");
+            $(this).find($roletext).css('color', '#2F3A5E');
+        });
+        // 获取焦点方式选择数据
+        $roleInfo.on("focus", function () {
+            $(this).parent().parent().find($ico).removeClass("checked");
+            $(this).parent().parent().find($icoinner).removeClass("checked-inner");
+            $(this).parent().parent().find($roletext).css('color', '#9A9EAC');
+            $(this).find($ico).addClass("checked");
+            $(this).find($icoinner).addClass("checked-inner");
+            $(this).find($roletext).css('color', '#2F3A5E');
+        });
+
+        //tab键 获取焦点
+        $(document).bind('keydown', function (event) {
+            if (event.keyCode == 9) {       //tab键值为13
+                $('.login-info').focus();
+            }
+        });
+
+        //回车登录房间
+        $('body').keydown(function () {
+            if (event.keyCode == 13) {   //enter键值为13
+                $login.click();
+            }
+        });
+
+        $login.on("click", function () {
+            if (!sdkConfig.inited) {
+                var appid = sdkConfig.appid;
+                var appkey = sdkConfig.appkey;
+
+                sdkConfig.inited = ChuangLiveEngine.initEngine(appid, appkey, generalFailure);
+
+                if (sdkConfig.inited) {
+                    // $appId.attr("disabled","disabled");
+                    // $appKey.attr("disabled","disabled");
+
+                    bindEngineEvents();
+                }
+                if (!sdkConfig.inited) return;
+            }
+
+            !$settingPanel.hasClass('hide') && $settingPanel.addClass('hide');
+            roomName = $roomId.val();
+            streamName = $streamName.val();
+            var unvalRoomName = !roomName || roomName.match(/[^\w-]/);
+            var unvalStreamName = !streamName || streamName.match(/[^\w-]/);
+
+            if ((unvalRoomName || unvalStreamName)) {
+                $('.login-err').removeClass('hide');
+                return;
+            }
+
+            auxStreamName = (streamName + '-1');
+            usertype = $(".checked").next().data('bind');
+            userrole = $(".checked").next().text();
+
+            if (usertype == 2) {
+                $camera.removeClass("video").addClass(" forbid unvideo");
+                $microphone.removeClass("audio").addClass(" forbid unaudio");
+                $screen.removeClass("screen").addClass(" forbid unscreen");
+            }
+            sdkConfig.role = usertype;
+            ChuangLiveEngine.loginRoom(roomName, sdkConfig.uid, sdkConfig.role, generalFailure);
+        });
+
+        $logout.on("click", function () {
+            //TODO：添加是否确认退出房间
+            !$settingPanel.hasClass('hide') && $settingPanel.addClass('hide');
+            $dataShow.addClass('none');
+            $voicedataShow.addClass('none');
+            if (usertype == ChuangLiveEngine.ChuangUserRole.INTER_ACTION && (!$mixServe.hasClass("none"))) {
+                ChuangLiveEngine.stopMixStream(generalFailure);
+            }
+            ChuangLiveEngine.logoutRoom(generalFailure);
+        });
+
+        $camera.on("click", function () {
+            var streamId = streamName;
+            if ($camera.hasClass('video')) {
+                $camera.removeClass('video');
+                $camera.addClass('video-mute');
+                ChuangLiveEngine.muteLocalVideo(streamId, 1);
+            } else {
+                $camera.addClass('video');
+                $camera.removeClass('video-mute');
+                ChuangLiveEngine.muteLocalVideo(streamId, 0);
+            }
+        });
+        $microphone.on("click", function () {
+            var streamId = streamName;
+            if ($microphone.hasClass('audio')) {
+                $microphone.removeClass('audio');
+                $microphone.addClass('audio-mute');
+                ChuangLiveEngine.muteLocalAudio(streamId, 1);
+            } else {
+                $microphone.addClass('audio');
+                $microphone.removeClass('audio-mute');
+                ChuangLiveEngine.muteLocalAudio(streamId, 0);
+            }
+        });
+        $screen.on("click", function () {
+            var streamId = auxStreamName;
+            if ($screen.hasClass("screen-mute")) {
+                $screen.removeClass("screen-mute");
+                $screen.addClass("screen");
+                unpublishAux(streamId);
+
+            } else {
+
+                publishAux(streamId);
+            }
+        });
+
+        $('body').on('mousedown', '.stream-mask .camera button', function () {
+            isbtnEvent = 1;
+            var streamId = $(this).parent().parent().parent().attr('data-id');
+            if ($(this).parent().hasClass('video')) {
+                $(this).parent().removeClass('video');
+                $(this).parent().addClass('video-mute');
+                ChuangLiveEngine.muteRemoteVideo(streamId, 1);
+            } else {
+                $(this).parent().addClass('video');
+                $(this).parent().removeClass('video-mute');
+                ChuangLiveEngine.muteRemoteVideo(streamId, 0);
+            }
+        });
+        $('body').on('mousedown', '.stream-mask .microphone button', function () {
+            isbtnEvent = 1;
+            var streamId = $(this).parent().parent().parent().attr('data-id');
+            if ($(this).parent().hasClass('audio')) {
+                $(this).parent().removeClass('audio');
+                $(this).parent().addClass('audio-mute');
+                ChuangLiveEngine.muteRemoteAudio(streamId, 1);
+            } else {
+                $(this).parent().addClass('audio');
+                $(this).parent().removeClass('audio-mute');
+                ChuangLiveEngine.muteRemoteAudio(streamId, 0);
+            }
+        });
+
+        $(".setting").on("click", function () {
+            $settingPanel.removeClass("hide");
+            $('.cover').removeClass('hide');
+        });
+
+        $(".close").on("click", function () {
+            $('.cover').addClass('hide');
+            if ((!$($mixServe).hasClass('none') && !$('.mix-data input').val()) && (!$($rtmpServe).hasClass('none') && !$('.rtmp-data input').val())) {
+                $('.rtmp-err .err').removeClass('hide');
+                $('.mixrtmp-err .err').removeClass('hide');
+            }
+            else if (!$($rtmpServe).hasClass('none') && !$('.rtmp-data input').val()) {
+                // $('.modal-body p').html($('.rtmp-preset .rtmp-data p').text() + '不能为空');
+                // $('#rtmpAddressNone').modal();
+                $('.rtmp-err .err').removeClass('hide');
+
+            } else if (!$($mixServe).hasClass('none') && !$('.mix-data input').val()) {
+                // $('.modal-body p').html($('.mix-preset:first .mix-data p').text() + '不能为空');
+                // $('#rtmpAddressNone').modal();
+                $('.mixrtmp-err .err').removeClass('hide');
+            } else {
+                $('.rtmp-err .err').addClass('hide');
+                $('.mixrtmp-err .err').addClass('hide');
+                $settingPanel.addClass("hide");
+            }
+            // $('.do').on('click', function(){
+            //         $('#rtmpAddressNone').hide();
+            //         return;
+            //     })
+        });
+
+        $dataShow.on("click", function () {
+            if ($dataShow.hasClass("none")) {
+                $dataShow.removeClass("none");
+                // showsiItvl = setInterval(showStreamInfo, 1000);
+            } else {
+                $dataShow.addClass("none");
+            }
+            showStreamInfo();
+        });
+
+        $voicedataShow.on("click", function () {
+            if ($voicedataShow.hasClass("none")) {
+                $voicedataShow.removeClass("none");
+            } else {
+                $voicedataShow.addClass("none");
+            }
+        });
+
+
+        $rtmpServe.on("click", function () {
+            if ($rtmpServe.hasClass("none")) {
+                $rtmpServe.removeClass("none");
+                $($rtmppreset).removeClass('hide');
+            } else {
+                $rtmpServe.addClass("none");
+                $($rtmppreset).addClass('hide');
+                $('.rtmp-err .err').addClass('hide');
+            }
+
+        });
+        $mixServe.on("click", function () {
+            if ($mixServe.hasClass("none")) {
+                $mixServe.removeClass("none");
+                $($mixpreset).removeClass('hide');
+            } else {
+                $mixServe.addClass("none");
+                $($mixpreset).addClass('hide');
+                $('.mixrtmp-err .err').addClass('hide');
+            }
+
+        });
+
+        $("ul").on("click", "li", function (e) {
+            if (isbtnEvent == 1) {
+                isbtnEvent = -1;
+                return;
+            }
+            if ($(this).hasClass('firstvideo')) {
+                return;
+            }
+            //根据切换的li与占位图的前后关系决定占位图在目标图前面使用before还是在后面使用after
+            var flag = 1  //目标图的index
+            var flagFv = 1; // 占位图的index
+            var liId = $(this).children(':first').attr('data-id');
+            var len = $(".participants ul li").length;
+            for (var i = 0; i < len; i++) {
+                $('.participants ul').each(function () {
+                    var classlen = $(this).find('.stream-item').eq(i).attr('data-id');
+                    if (classlen == liId) {
+                        flag = i;
+                    }
+                })
+                if ($('.participants ul li:eq(' + i + ')').attr('class') == 'firstvideo') {
+                    flagFv = i;
+                }
+            }
+            $('ul .firstvideo .userid input').val($(this).find('.userid input').val())
+            $(".participants ul .firstvideo").before($('.participants ul li:eq(' + flag + ')'));
+            if (flagFv < flag) {
+                $('.participants ul li:eq(' + flag + ')').after($(".participants ul .firstvideo"));
+            } else {
+                $('.participants ul li:eq(' + flag + ')').before($(".participants ul .firstvideo"));
+            }
+            $(this).before($(".participants ul li:eq(0)"));
+            $(".participants ul li:eq(0)").before(this);
+        })
+
+
+
+        // $('body').on('mouseover', '.userid input', function () {
+        //     $(this).attr('title', $(this).val());
+        // })
+        function bindEngineEvents() {
+            ChuangLiveEngine.on('RoomStateUpdate', function (roomId, state, errorCode) {
+                if (state == ChuangLiveEngine.ChuangRoomState.CONNECTED && errorCode == 0) {
+
+                    $('.err').addClass('hide');
+                    $(".roomidValue").eq(0).attr("value", roomId);
+                    $(".usernameValue").eq(0).attr("value", streamName);
+                    $(".userroleValue").eq(0).attr("value", userrole);
+
+                    $settingPanel.addClass("hide");
+                    $loginRoom.addClass("hide");
+                    $videoPanel.removeClass("hide");
+                    // if(usertype != ChuangLiveEngine.ChuangUserRole.WATCH){
+                    //     $('.wait-video').addClass('hide')
+                    // }
+                    // if (rparam.userlist.length || usertype == ChuangLiveEngine.ChuangUserRole.ANCHOR || usertype == ChuangLiveEngine.ChuangUserRole.INTER_ACTION) {
+                    //     $('.wait-video').addClass('hide');
+                    //     $('.video-container').css('background', '');
+                    //     $('.video-container').addClass('wait-play');
+                    // }
+
+
+                    // $('.vido-setting div').filter(":lt(4)").show().end().filter(":gt(4)").hide();
+                    // $('.rtmp-setting div').filter(":lt(4)").show().end().filter(":gt(4)").hide()
+                    // $('.mix-setting div').filter(":lt(4)").show().end().filter(":gt(4)").hide()
+                    $('.video-preset').addClass('hide');
+                    $('.mix-setting').addClass('hide');
+                    $('.rtmp-setting').addClass('hide');
+                    $('.clear').addClass('hide');
+                    $('.setting-panel').css("height", "16%");
+                    $('.setting-panel').css("min-height", "140px");
+                    $('.setting-panel .head').css("height", "27%");
+                    $('.vido-setting').css("border-bottom", 'none');
+
+                    if (usertype == ChuangLiveEngine.ChuangUserRole.ANCHOR || usertype == ChuangLiveEngine.ChuangUserRole.INTER_ACTION) {
+                        publishMain();
+                    }
+                } else if (state == ChuangLiveEngine.ChuangRoomState.DISCONNECTED && errorCode == 0) {
+                    $loginRoom.removeClass("hide");
+                    $videoPanel.addClass("hide");
+                    $settingPanel.addClass('hide');
+                    $role.find($ico).removeClass("checked");
+                    $role.find($icoinner).removeClass("checked-inner");
+                    $role.children(":first").find($ico).addClass("checked");
+                    $role.children(":first").find($icoinner).addClass("checked-inner");
+                    // $('.video-container').css('background','#DEDEDE');
+                    $('.video-container').css('background', '#DEDEDE');
+                    $('.video-container').removeClass('wait-play');
+                    $('.wait-video').removeClass('hide');
+
+
+                    $camera.removeClass("forbid video-mute unvideo").addClass("video");
+                    $microphone.removeClass("forbid audio-mute unaudio").addClass("audio");
+                    $screen.removeClass("forbid screen-mute unscreen").addClass("screen");
+
+                    // $('.vido-setting div').filter(":lt(4)").show().end().filter(":gt(4)").show();
+                    // $('.rtmp-setting div').filter(":lt(4)").show().end().filter(":gt(4)").show();
+                    // $('.mix-setting div').filter(":lt(4)").show().end().filter(":gt(4)").show();
+                    $('.video-preset').removeClass('hide');
+                    $('.mix-setting').removeClass('hide');
+                    $('.rtmp-setting').removeClass('hide');
+                    $('.clear').removeClass('hide');
+                    $('.setting-panel').addClass("hide");
+                    $('.setting-panel').css("width", "10%");
+                    $('.setting-panel').css("min-height", "400px");
+                    $('.setting-panel').css("height", "60%");
+                    $('.setting-panel .head').css("height", "9%");
+                    $(".vido-setting").css("border-bottom", '1px solid #EBEEF1')
+
+                    $(".participant-info var").html(0);
+                    videoCube.removeAll();
+                    $('ul li').remove();
+                    $roomId.val('');
+                    $streamName.val('');
+                }
+            }).on('room-logout', function (roomId) {
+
+
+            }).on('RoomStreamUpdate', function (roomId, type, streamList) {
+                if (type == ChuangLiveEngine.ChuangStreamUpdateType.ADD) {
+
+
+                    var option = { fit: 'contain' };
+                    for (var i = 0, l = streamList.length; i < l; i++) {
+                        var user = streamList[i];
+                        var streamId = user.streamId;
+                        videoCube.resize();
+                        toastr.info(streamId + "进入直播间");
+                        if (videoCube.addItem(streamId, user.width, user.height)) {
+                            videoCube.setStreamValue(streamId, streamId);
+                            ChuangLiveEngine.startPlayStream(streamId, { domId: "video-" + streamId, options: option }, generalFailure);
+                        }
+                        var $dom = $('.stream-item');
+                        for (let i = 0; i < $dom.length; i++) {
+                            if (user.streamstat == 1 && $($dom[i]).attr('data-id') == streamId) {
+                                $($dom[i]).children().last().children().children().first().hide();
+                            } else if (user.streamstat == 2 && $($dom[i]).attr('data-id') == streamId) {
+                                $($dom[i]).children().last().children().children().last().hide();
+                            }
+                        }
+                    }
+
+                    if (usertype == ChuangLiveEngine.ChuangUserRole.AUDIENCE) {
+                        if ($('.firstvideo').length == 1) {
+                            $('.firstvideo .userid input').val(streamList[0].streamId);
+                            $('ul').append($('.firstvideo').clone());
+                            $('ul .firstvideo').removeClass('hide');
+                        }
+                    }
+
+                    if (usertype == ChuangLiveEngine.ChuangUserRole.INTER_ACTION && (!$mixServe.hasClass("none"))) {
+                        var streamMixConfig = setStreamMixConfig();
+                        var mixStreams = streamMixConfig.mixStreams;
+                        ChuangLiveEngine.updateMixStream(mixStreams, generalFailure);
+                    }
+
+                    $(".participant-info var").html($("ul li").length - 1);
+
+                } else if (type == ChuangLiveEngine.ChuangStreamUpdateType.DELETE) {
+                    for (var i = 0, l = streamList.length; i < l; i++) {
+                        var user = streamList[i];
+                        var streamId = user.streamId;
+                        toastr.info(streamId + "离开房间");
+
+                        ChuangLiveEngine.stopPlayStream(streamId, generalFailure);
+
+                        if ($('ul .firstvideo .userid input').val() == streamId && $('ul li:eq(1)').attr('class') != 'firstvideo') {
+                            $('ul .firstvideo .userid input').val($('ul li:eq(1) .userid input').val());
+                            $('ul li:eq(1)').after($('ul .firstvideo'));
+                        } else if ($('ul .firstvideo .userid input').val() == streamId && $('ul li:eq(1)').attr('class') == 'firstvideo') {
+                            $('ul .firstvideo .userid input').val($('ul li:eq(2) .userid input').val());
+                            $('ul .firstvideo').before($('ul li:eq(2)'));
+                        }
+                        videoCube.removeItem(streamId);
+                        $("ul li").length && $(".participant-info var").html($("ul li").length - 1);
+                        if ($('ul').children().length == 1) {
+                            $('ul li').remove();
+                            $('.wait-video').removeClass('hide');
+                            $('.video-container').css('background', '#DEDEDE');
+                            $('.video-container').removeClass('wait-play');
+                        }
+
+                    }
+                    if (usertype == ChuangLiveEngine.ChuangUserRole.INTER_ACTION && (!$mixServe.hasClass("none"))) {
+                        var streamMixConfig = setStreamMixConfig();
+                        var mixStreams = streamMixConfig.mixStreams;
+                        ChuangLiveEngine.updateMixStream(mixStreams, generalFailure)
+                    }
+                }
+
+            }).on('stream-removed', function (users) {
+
+
+            }).on('sdk-failure', function (errorCode) {
+                toastr.error("<i class='fa fa-exclamation'></i> 错误：" + errorCode);
+
+            }).on('stream-video-revoked', function (streamRevoke) {
+                var streamId = streamRevoke.streamId;
+                toastr.info("<i class='fa fa-exclamation'></i> ：" + streamId);
+                // if($(".modal-body>h4").length == 0){
+                //     $(".modal-body").append('<h4 class="modal-title" id="revokeLabel">流'+streamId+'停止，原因是：'+streamRevoke.reason +'重新推流或停止推流？</h4>');
+                // }
+                // $(".modal-body").remove('<h4 class="modal-title" id="revokeLabel">请确认停止分享'+streamId+'</h4>');
+                // $('#revoke').modal();
+
+
+                // $(".pub").on("click", function() {
+                //     if(streamId.indexOf('-1') != -1){
+                //         publishAux(streamId);
+                //     } else {
+                //         publishMain();
+                //     }
+                // });
+                // $(".unpub").on("click", function() {
+                // });
+
+                //     if($('.firstvideo .userid pre').text() == streamId){
+                //     $(".participants ul li:eq(2)").before($(".participants ul li:eq(0)")); 
+                //     $(".participants ul li:eq(0)").before($(".participants ul li:eq(2)"));
+                //     $('ul li:eq(1) .userid pre').html($('ul li:eq(0) .userid pre').html())
+                // }
+
+                ChuangLiveEngine.stopPublishStream(streamId, generalFailure);
+                videoCube.removeItem(streamId);
+
+            }).on('PublishStreamStateUpdate', function (streamId, state, errorCode) {
+                //设置流窗口下面显示的内容 流名
+                if (state == ChuangLiveEngine.ChuangPublishState.CONNECTED && errorCode == 0) {
+
+
+                    videoCube.setStreamValue(streamId, streamId);
+                    if ($('.firstvideo').length == 1) {
+                        $('.firstvideo .userid input').val(streamId);
+                        $('ul').append($('.firstvideo').clone());
+                        $('ul .firstvideo').removeClass('hide');
+                        // $('.firstvideo .userid pre').html(streamId)
+                        // if($(".participants ul li:eq(1)").length){
+                        //     $(".participants ul .firstvideo").before($(".participants ul li:eq(1)"));
+                        //     $(".participants ul li:eq(1)").before($(".participants ul .firstvideo"));
+                        // } else{
+                        // }
+                    } else {
+
+                    }
+                    //判断主窗口（大窗口）是否是互动身份推的流，如果不是将所推流放到主窗口
+                    if ($('.stream-item:first').attr('data-id') != streamId) {
+                        $('ul li:first').before($('*[data-id=' + streamId + ']').parent());
+                    }
+                    if (streamId.indexOf('-') != -1) {
+                        $screen.addClass("screen-mute");
+                        $screen.removeClass("screen");
+                        (!$mixServe.hasClass("none")) && ChuangLiveEngine.updateMixStream(mixStreams, generalFailure);
+
+                    } else {
+                        // $('ul li:eq(1) .userid pre').html(streamId);
+                    }
+                    $(".participant-info var").html($("ul li").length - 1);
+                    toastr.info(streamId + "已进入直播间");
+                    videoCube.resize();
+                    // showsiItvl = setInterval(showStreamInfo, 2000);
+
+                    if (usertype == ChuangLiveEngine.ChuangUserRole.INTER_ACTION && (!$mixServe.hasClass("none"))) {
+                        var streamMixConfig = setStreamMixConfig();
+                        var mixStreams = streamMixConfig.mixStreams;
+                        ChuangLiveEngine.startMixStream(streamMixConfig, generalFailure);
+                    }
+                } else if (state == ChuangLiveEngine.ChuangPublishState.DISCONNECTED && errorCode == 0) {
+                    videoCube.removeItem(streamId);
+                    $(".participant-info var").html($("ul li").length - 1);
+                    if ($('ul').children().length == 2) {
+                        $('ul').remove('li');
+                    }
+                    toastr.info(streamId + "离开房间");
+                    if (streamId == $('ul .firstvideo .userid input').val()) {
+                        $('ul .firstvideo .userid input').val($('ul li:eq(0) .userid input').val());
+                        $('ul li:eq(0)').after($('ul .firstvideo'));
+                    }
+                    if (streamId.indexOf('-') != -1 && $screen.hasClass("screen-mute")) {
+                        $screen.removeClass("screen-mute").addClass("screen");
+                    }
+                    if (usertype == ChuangLiveEngine.ChuangUserRole.INTER_ACTION && (!$mixServe.hasClass("none"))) {
+                        var streamMixConfig = setStreamMixConfig();
+                        var mixStreams = streamMixConfig.mixStreams;
+                        ChuangLiveEngine.updateMixStream(mixStreams, generalFailure);
+                    }
+                }
+
+            }).on('stream-unpublished', function (streamId) {
+
+
+
+            }).on('stream-played', function (streamId) {
+            }).on('stream-unplayed', function (streamId) {
+            }).on('stream-netstat', function (netstat) {
+                netstats = netstat;
+                // toastr.error("<i class='fa fa-exclamation'></i> 流"+netstat.streamId
+                //     +"质量不佳，丢包率："+netstat.loss+", 实际帧率："+netstat.realframerate);
+            }).on('stream-not-autoplay', function (streamId) {
+                $('#noAutoplay').modal();
+                //用户被封的回调
+            }).on('banned_by_app', function () {
+
+            }).on('PublishStreamQualityUpdate', function (streamId, ChuangPublishStreamQuality) {
+                getStreamQuality(streamId, ChuangPublishStreamQuality);
+            }).on('PlayStreamQualityUpdate', function (streamId, ChuangPlayStreamQuality) {
+                getStreamQuality(streamId, ChuangPlayStreamQuality);
+            }).on('PublishStreamVideoSizeChanged', function (streamId, width, height) {
+                console.log('publishStream resolution changed', streamId, width, height);
+            }).on('PlayStreamVideoSizeChanged', function (streamId, width, height) {
+                console.log('pullStream resolution changed', streamId, width, height);
+            }).on('net-type', function (netType) {
+                console.log('netType changed', netType);
+            });
+        };
+
+        function getDevices() {
+            ChuangLiveEngine.getDevices(function (devices) {
+                var devCount = devices.length;
+                if (devCount == 0) return;
+
+                var videoDevices = [];
+                var audioDevices = [];
+                for (var i = 0, l = devCount; i < l; i++) {
+                    var device = devices[i];
+                    if ('videoinput' == device.kind) {
+                        videoDevices.push(device.deviceId);
+                    } else if ('audioinput' == device.kind) {
+                        audioDevices.push(device.deviceId);
+                    } else {
+                    }
+                }
+                $videoValue = videoDevices[0];
+                $audioValue = audioDevices[0];
+
+            });
+        }
+
+        function setStreamMixConfig() {
+            var streamMixConfig = {};
+            streamMixConfig.rtmpAddress = $mixrtmp.val();
+
+            var rtmpValues = streamMixConfig.rtmpAddress.split('/');
+            var outputStreamId = rtmpValues.pop();
+            streamMixConfig.outputStremId = outputStreamId;
+
+            streamMixConfig.outputVideoBitrate = $mixBirate.val();
+            streamMixConfig.outputVideoResolution = $mixRes.val();
+
+            var mixStreams = [];
+            var items = videoCube.getAllItems();
+            for (var i = 0; i < items.length; i++) {
+                var mixStream = {};
+                mixStream.streamId = items[i].itemId;
+                mixStream.videoWidth = items[i].width;
+                mixStream.videoHeight = items[i].height;
+                mixStream.mixZIndex = items[i].z;
+                // mixStream.mixv = items[i].mixv.toString();
+                // mixStream.mixa = items[i].mixa.toString();
+                // mixStream.mixSrcRect = {
+                //     left:items[i].x,
+                //     top:items[i].y,
+                //     right:(items[i].x+items[i].w),
+                //     bottom:(items[i].h+items[i].y)
+                // };
+                mixStream.mixDstRect = {
+                    left: items[i].x,
+                    top: items[i].y + items[i].h * i,
+                    right: items[i].x + items[i].w,
+                    bottom: items[i].h * (i + 1) + items[i].y
+                };
+                mixStreams.push(mixStream);
+            }
+            streamMixConfig.mixStreams = mixStreams;
+            return streamMixConfig;
+        }
+
+        function publishMain() {
+            getDevices();
+            var streamId = streamName;
+            var option = {};
+            if (!videoCube.addItem(streamId)) return;
+            var id = 'video-' + streamId;
+            $('#' + id).next().next().hide()
+            // if(usertype != ChuangLiveEngine.ChuangUserRole.AUDIENCE) {
+            //     $('.video-container').css('background','white');
+            //     $('ul li:eq(0) .stream-item').addClass('wait-play');
+            // }
+
+            // videoCube.setStreamValue(streamId, streamId);
+            var streamConfig = ChuangLiveEngine.newStreamConfig(ChuangLiveEngine.ChuangPublishChannel.MAIN);
+            if (usertype != ChuangLiveEngine.ChuangUserRole.AUDIENCE && (!$rtmpServe.hasClass("none"))) {
+                streamConfig.setRtmpAddress($pushrtmp.val());
+
+            }
+            streamConfig.setVideoConfigPreset($($mediaSetting).val());
+            var hasVideo = true;
+            var hasAudio = true;
+
+            if ($videoValue && $($voicedataShow).hasClass('none')) {
+                streamConfig.setCameraId($videoValue);
+            } else {
+                hasVideo = false;
+            }
+
+            if ($audioValue) {
+                streamConfig.setMicrophoneId($audioValue);
+            } else {
+                hasAudio = false;
+            }
+            var streamstat = hasVideo ?
+                hasAudio ? 0 : 2
+                :
+                hasAudio ? 1 : 0;
+            streamConfig.setStreamstat && streamConfig.setStreamstat(streamstat);
+            var $dom = $('.stream-item')
+            for (let i = 0; i < $dom.length; i++) {
+
+                if ($($dom[i]).attr('data-id') == streamId.toString()) {
+                    $($dom[i]).children().last().hide()
+                };
+            }
+            ChuangLiveEngine.startPublishStream(streamId, 'video-' + streamId, streamConfig, option, function (err) {
+                videoCube.removeItem(streamId);
+                generalFailure(err);
+            });
+        }
+
+        function unpublishMain() {
+            // videoCube.removeItem(streamId);
+            // if($('ul').children().length == 1){
+            //     $('ul').remove('li');
+            // }
+            var streamId = streamName;
+            ChuangLiveEngine.stopPublishStream(streamId, generalFailure);
+        }
+
+        function unpublishAux(streamId) {
+
+            ChuangLiveEngine.stopPublishStream(streamId, generalFailure);
+            // videoCube.removeItem(streamId);
+        }
+        function publishAux(streamId) {
+            var option = { fit: 'contain' };
+            if (!videoCube.addItem(streamId)) return;
+            videoCube.setStreamValue(streamId, streamId);
+            var streamConfig = ChuangLiveEngine.newStreamConfig(ChuangLiveEngine.ChuangPublishChannel.AUX);
+            // streamConfig.setRtmpAddress($pushrtmp.val());
+            streamConfig.useScreen();
+            // streamConfig.setVideoConfigPreset('1920*1080_15_1500');
+            streamConfig.setVideoConfigPreset($($mediaSetting).val());
+            var hasVideo = true;
+            var hasAudio = false;
+
+            var streamstat = hasVideo ?
+                hasAudio ? 0 : 2
+                :
+                hasAudio ? 1 : 0;
+            streamConfig.setStreamstat && streamConfig.setStreamstat(streamstat);
+            var $dom = $('.stream-item')
+            for (let i = 0; i < $dom.length; i++) {
+
+                if ($($dom[i]).attr('data-id') == streamId.toString()) {
+                    $($dom[i]).children().last().hide()
+                };
+            }
+            ChuangLiveEngine.startPublishStream(streamId, 'video-' + streamId, streamConfig, option, function (err) {
+                // videoCube.removeItem(streamId);
+                videoCube.removeItem(streamId);
+
+            });
+        }
+
+        // function showStreamInfo() {
+        //     var NEWLINE = '\n';
+        //     var allItemIds = videoCube.getAllItemId();
+        //     // var isshow = $screen.hasClass('screen-mute');
+        //     var isnone = $dataShow.hasClass("none");
+        //     var isvaliable = !isnone;
+        //     var loss = netstats ? netstats.loss : '--';
+        //     var realframerate = netstats ? netstats.realframerate : '--';
+        //     var rtt = netstats ? netstats.rtt : '--';
+        //     for (var i = 0, l = allItemIds.length; i < l; i++) {
+        //         var streamId = allItemIds[i];
+        //         var streamInfo = ChuangLiveEngine.getVideoStreamStatus(streamId);
+        //         var durcation = new Date() / 1000
+        //         // console.log('streamInfo', streamInfo.framesEncoded, durcation)
+        //         if (!streamInfo) continue;
+
+        //         var infotext = null;
+        //         // console.log('streaInfo', streamInfo)
+        //         if (ChuangLiveEngine.BUILD) {
+        //             if (streamInfo.kbitsPerSecond)
+
+        //                 infotext = 'bitrate :' + streamInfo.kbitsPerSecond + NEWLINE + 'rtt :' + (rtt || streamInfo.currentRoundTripTime) + NEWLINE
+        //                     + 'framesPerSecond :' + streamInfo.framesPerSecond + NEWLINE + 'packetsloss :' + loss;
+        //             else
+        //                 infotext = streamId + ': connecting...';
+        //             // for(var j in streamInfo) {
+        //             //     (j != 'kbitsPerSecond' && j != 'currentRoundTripTime' && 
+        //             //         typeof streamInfo[j] === 'number') &&
+        //             //         (infotext += j + ': ' + parseInt(streamInfo[j]) + NEWLINE);
+        //             // }
+        //         }
+        //         else {
+        //             infotext = streamId + ': ' + streamInfo.bitrate + NEWLINE;
+        //             var info = streamInfo.info;
+
+        //             for (var j in info) {
+        //                 (typeof info[j] === 'number') &&
+        //                     (infotext += j + ': ' + parseInt(info[j]) + NEWLINE);
+        //             }
+        //         }
+
+        //         videoCube.setItemInfo(streamId, isvaliable ? infotext : '');
+        //     }
+
+        //     if (!isvaliable) {
+        //         clearInterval(showsiItvl);
+        //         showsiItvl = 0;
+        //     }
+        // }
+        function showStreamInfo() {
+            var NEWLINE = '\n';
+            var allItemIds = videoCube.getAllItemId();
+            var isshow = $dataShow.hasClass('none');
+            if (!isshow) {
+                ChuangLiveEngine.startStreamQualityTest();
+
+            } else {
+                ChuangLiveEngine.stopStreamQualityTest();
+                for (var i = 0, l = allItemIds.length; i < l; i++) {
+                    var streamId = allItemIds[i];
+                    getStreamQuality(streamId, '')
+                }
+            }
+        }
+
+        function getStreamQuality(streamId, info) {
+            var NEWLINE = '\n';
+            var infotext = '';
+            if (info) {
+                infotext = 'streamId:' + streamId + NEWLINE;
+                for (var j in info) {
+                    (infotext += j + ': ' + parseInt(info[j]) + NEWLINE);
+                }
+            }
+            videoCube.setItemInfo(streamId, infotext);
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
